@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>FamilyBrowser</Name>
+    <Assembly>FamilyBrowser.dll</Assembly>
+    <AddInId>E0D97ACA-85E2-430D-BCD8-8E3190C7B3F8</AddInId>
+    <FullClassName>FamilyBrowser.Application</FullClassName>
+    <VendorId>ADSK</VendorId>
+    <VendorDescription>FamilyBrowser</VendorDescription>
+  </AddIn>
+</RevitAddIns>
