@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static FamilyBrowser.Form_browser;
+using static FamilyBrowser.Family_browser;
 
 namespace FamilyBrowser
 {

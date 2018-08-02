@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyBrowser", "ClassLibrary\FamilyBrowser.csproj", "{9B2269A8-71A0-43A3-BC39-811D0BC48453}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyBrowser", "FamilyBrowser\FamilyBrowser.csproj", "{9B2269A8-71A0-43A3-BC39-811D0BC48453}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5042E183-56A8-4A78-9529-47E81BC77746}
+		SolutionGuid = {B5FAC61D-5F43-4CEF-9420-290B17E89181}
 	EndGlobalSection
 EndGlobal

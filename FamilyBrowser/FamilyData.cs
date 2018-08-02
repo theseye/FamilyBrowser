@@ -15,6 +15,10 @@ namespace FamilyBrowser
 
         public string folder_name { get; set; }
 
+        public string family_name { get; set; }
+
+        public string category_name { get; set; }
+
         public string symbol_name { get; set; }
 
         public FamilySymbol symbol { get; set; }

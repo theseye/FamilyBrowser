@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,6 +41,7 @@
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI">
       <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2016\RevitAPI.dll</HintPath>
       <Private>False</Private>
@@ -52,6 +54,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,13 +68,14 @@
     <Compile Include="Application.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="FamilyData.cs" />
-    <Compile Include="Form_browser.cs">
+    <Compile Include="Family_browser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_browser.designer.cs">
-      <DependentUpon>Form_browser.cs</DependentUpon>
+    <Compile Include="Family_browser.designer.cs">
+      <DependentUpon>Family_browser.cs</DependentUpon>
     </Compile>
     <Compile Include="LoadFamily.cs" />
+    <Compile Include="LoadFamily_local.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -86,8 +91,8 @@
     <Compile Include="Tools.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form_browser.resx">
-      <DependentUpon>Form_browser.cs</DependentUpon>
+    <EmbeddedResource Include="Family_browser.resx">
+      <DependentUpon>Family_browser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

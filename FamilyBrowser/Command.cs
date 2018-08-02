@@ -11,7 +11,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using static FamilyBrowser.Form_browser;
+using static FamilyBrowser.Family_browser;
 
 
 namespace FamilyBrowser
@@ -26,11 +26,39 @@ namespace FamilyBrowser
 
             UIDocument uidoc = commandData.Application.ActiveUIDocument;
 
+            var family_collect = new FilteredElementCollector(uidoc.Document).OfClass(typeof(Family));
+
+            var Data = new List<FamilyData>();
+
+            foreach (var item in family_collect)
+            {
+                var family = item as Family;
+
+                foreach (var symbol_id in family.GetFamilySymbolIds())
+                {
+                    var FamilyData = new FamilyData();
+
+                    FamilyData.family_name = family.Name;
+
+                    var symbol = family.Document.GetElement(symbol_id) as FamilySymbol;
+
+                    FamilyData.symbol_name = symbol.Name;
+
+                    FamilyData.category_name = symbol.Category.Name;
+
+                    FamilyData.symbol = symbol;
+
+                    Data.Add(FamilyData);
+                }
+            }
+
             ExternalEvent exEvent = ExternalEvent.Create(new LoadFamily());
+
+            ExternalEvent exEvent_local = ExternalEvent.Create(new LoadFamily_local());
 
             if (Form_Browser == null)
             {
-                var Form_browser = new Form_browser(uidoc, exEvent);
+                var Form_browser = new Family_browser(uidoc, exEvent, Data, exEvent_local);
 
                 Form_browser.Show();
             }

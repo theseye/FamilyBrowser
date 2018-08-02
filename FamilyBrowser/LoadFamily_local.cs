@@ -7,26 +7,14 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using static FamilyBrowser.Family_browser;
 
 namespace FamilyBrowser
 {
-    class LoadFamily : IExternalEventHandler
+    class LoadFamily_local : IExternalEventHandler
     {
         public void Execute(UIApplication app)
         {
-            var fileName = Path.Combine(Path.GetTempPath(), "Bimcc", Form_browser.symbol_name) + ".rfa";
-
-            if (File.Exists(fileName))
-            {
-                //
-            }
-            else
-            {
-                var http = new WebClient();
-
-                http.DownloadFile("http://img01.pinming.cn/8a9b6c3d6209756f01621d38a19a01de.rfa?Expires=1532929251&OSSAccessKeyId=LTAI8ZbJOm3c5VVZ&Signature=dOA6DRrM2eQxtfg7qwjtYpvO73c%3D", fileName);
-            }
-
             UIDocument uidoc = app.ActiveUIDocument;
 
             Document doc = uidoc.Document;
@@ -35,12 +23,16 @@ namespace FamilyBrowser
             {
                 trans.Start();
 
-                uidoc.Document.LoadFamily(fileName);
+                uidoc.Document.LoadFamily(Family_browser.family_path);
 
                 trans.Commit();
             }
 
-            Family Family = new FilteredElementCollector(doc).OfClass(typeof(Family)).FirstOrDefault(e => e.Name.Equals(Form_browser.symbol_name)) as Family;
+            var name = Family_browser.family_path.Substring(Family_browser.family_path.LastIndexOf("\\") + 1);
+
+            name = name.Remove(name.LastIndexOf("."));
+
+            Family Family = new FilteredElementCollector(doc).OfClass(typeof(Family)).FirstOrDefault(e => e.Name.Equals(name)) as Family;
 
             ISet<ElementId> FamilySymbolIds = Family.GetFamilySymbolIds();
 
