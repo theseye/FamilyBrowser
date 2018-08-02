@@ -29,12 +29,12 @@ namespace FamilyBrowser
 
             (BimccRibbon.AddItem(new PushButtonData("family_public", "公共族库", Assembly_path, "FamilyBrowser.Command")) as PushButton).LargeImage = Tools.GetImage(Resources.browser.GetHbitmap());
 
-            application.ControlledApplication.DocumentOpened += ControlledApplication_DocumentChanged;
+            application.ControlledApplication.DocumentOpened += ControlledApplication_DocumentOpened;
 
             return Result.Succeeded;
         }
 
-        void ControlledApplication_DocumentChanged(object sender, DocumentOpenedEventArgs e)
+        void ControlledApplication_DocumentOpened(object sender, DocumentOpenedEventArgs e)
         {
             Family_browser.Form_Browser = null;
         }

@@ -116,7 +116,6 @@
             this.listView.Size = new System.Drawing.Size(640, 372);
             this.listView.TabIndex = 1;
             this.listView.UseCompatibleStateImageBehavior = false;
-            this.listView.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.listView_ItemChecked);
             // 
             // treeView_cloud
             // 
@@ -244,14 +243,14 @@
             this.toolStripMenuItem1,
             this.toolStripMenuItem2});
             this.contextMenuStrip_directory.Name = "contextMenuStrip_local";
-            this.contextMenuStrip_directory.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip_directory.Size = new System.Drawing.Size(125, 48);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.toolStripMenuItem1.Text = "创建实例";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.directory创建实例toolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 

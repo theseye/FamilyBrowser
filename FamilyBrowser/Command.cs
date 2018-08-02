@@ -26,10 +26,11 @@ namespace FamilyBrowser
 
             UIDocument uidoc = commandData.Application.ActiveUIDocument;
 
+            //找到当前文档所有族
             var family_collect = new FilteredElementCollector(uidoc.Document).OfClass(typeof(Family));
 
+            //收集所有FamilyData的信息，并储存在Data里
             var Data = new List<FamilyData>();
-
             foreach (var item in family_collect)
             {
                 var family = item as Family;
@@ -52,13 +53,11 @@ namespace FamilyBrowser
                 }
             }
 
-            ExternalEvent exEvent = ExternalEvent.Create(new LoadFamily());
-
-            ExternalEvent exEvent_local = ExternalEvent.Create(new LoadFamily_local());
+            var exEvent = ExternalEvent.Create(new LoadFamily());            
 
             if (Form_Browser == null)
             {
-                var Form_browser = new Family_browser(uidoc, exEvent, Data, exEvent_local);
+                var Form_browser = new Family_browser(uidoc, exEvent, Data);
 
                 Form_browser.Show();
             }

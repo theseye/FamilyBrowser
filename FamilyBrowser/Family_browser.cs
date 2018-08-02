@@ -21,7 +21,9 @@ namespace FamilyBrowser
             public JArray list { get; set; }
         }
 
-        public static string family_path;
+        public static string fileName;
+
+        public static string familyName;
 
         public static Family_browser Form_Browser;
 
@@ -29,21 +31,15 @@ namespace FamilyBrowser
 
         public ExternalEvent exEvent;
 
-        public ExternalEvent exEvent_local;
-
         public List<FamilyData> Data;
 
-        public static string symbol_name;
-
-        public Family_browser(UIDocument uidoc, ExternalEvent exEvent, List<FamilyData> Data, ExternalEvent exEvent_local)
+        public Family_browser(UIDocument uidoc, ExternalEvent exEvent, List<FamilyData> Data)
         {
             this.uidoc = uidoc;
 
             this.exEvent = exEvent;
 
             this.Data = Data;
-
-            this.exEvent_local = exEvent_local;
 
             Form_Browser = this;
 
@@ -188,7 +184,20 @@ namespace FamilyBrowser
         {
             if (listView.SelectedItems.Count > 0)
             {
-                symbol_name = listView.SelectedItems[0].Text;
+                familyName = listView.SelectedItems[0].Text;
+
+                fileName = Path.Combine(Path.GetTempPath(), "Bimcc", familyName) + ".rfa";
+
+                if (File.Exists(fileName))
+                {
+                    //
+                }
+                else
+                {
+                    var http = new WebClient();
+
+                    http.DownloadFile("http://img01.pinming.cn/8a9b6c3d6209756f01621d38a19a01de.rfa?Expires=1532929251&OSSAccessKeyId=LTAI8ZbJOm3c5VVZ&Signature=dOA6DRrM2eQxtfg7qwjtYpvO73c%3D", fileName);
+                }
 
                 exEvent.Raise();
             }
@@ -201,7 +210,7 @@ namespace FamilyBrowser
 
         private void listView_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            symbol_name = listView.SelectedItems[0].Text;
+            familyName = listView.SelectedItems[0].Text;
         }
 
         private void Form_browser_FormClosing(object sender, FormClosingEventArgs e)
@@ -293,7 +302,7 @@ namespace FamilyBrowser
 
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void directory创建实例toolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (treeView_directory.SelectedNode == null)
             {
@@ -304,9 +313,11 @@ namespace FamilyBrowser
             {
                 if (item.Contains(treeView_directory.SelectedNode.Text))
                 {
-                    family_path = item;
+                    familyName = treeView_directory.SelectedNode.Text;
 
-                    exEvent_local.Raise();
+                    fileName = item;
+
+                    exEvent.Raise();
                 }
             }
         }
