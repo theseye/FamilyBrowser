@@ -53,17 +53,17 @@ namespace FamilyBrowser
                 }
             }
 
-            var exEvent = ExternalEvent.Create(new LoadFamily());            
+            var exEvent = ExternalEvent.Create(new LoadFamily());
 
-            if (Form_Browser == null)
+            if (Family_Browser == null)
             {
                 var Form_browser = new Family_browser(uidoc, exEvent, Data);
 
-                Form_browser.Show();
+                Form_browser.ShowDialog();
             }
             else
             {
-                Form_Browser.Show();
+                Family_Browser.Show();
             }
 
             return Result.Succeeded;

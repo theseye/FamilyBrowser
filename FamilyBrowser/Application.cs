@@ -36,7 +36,7 @@ namespace FamilyBrowser
 
         void ControlledApplication_DocumentOpened(object sender, DocumentOpenedEventArgs e)
         {
-            Family_browser.Form_Browser = null;
+            Family_browser.Family_Browser = null;
         }
     }
 }

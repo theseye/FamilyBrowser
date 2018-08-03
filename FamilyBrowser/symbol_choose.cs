@@ -47,13 +47,13 @@ namespace FamilyBrowser
                 {
                     if (item.symbol_name == listView.SelectedItems[0].Text)
                     {
+                        Close();
+
+                        Family_Browser.Hide();
+
                         uidoc.PostRequestForElementTypePlacement(item.symbol);
                     }
                 }
-
-                Close();
-
-                Form_Browser.Hide();
             }
         }
 

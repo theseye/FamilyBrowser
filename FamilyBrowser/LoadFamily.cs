@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using static FamilyBrowser.Family_browser;
 
 namespace FamilyBrowser
 {
@@ -18,18 +19,19 @@ namespace FamilyBrowser
 
             Document doc = uidoc.Document;
 
+            Family Family;
+
             //载入族
             using (Transaction trans = new Transaction(uidoc.Document, "载入族"))
             {
                 trans.Start();
 
-                uidoc.Document.LoadFamily(Family_browser.fileName);
+                uidoc.Document.LoadFamily(Family_browser.fileName, out Family);
 
                 trans.Commit();
             }
 
             //找到所有指定名称的族
-            Family Family = new FilteredElementCollector(doc).OfClass(typeof(Family)).FirstOrDefault(e => e.Name.Equals(Family_browser.familyName)) as Family;
 
             ISet<ElementId> FamilySymbolIds = Family.GetFamilySymbolIds();
 
@@ -46,7 +48,6 @@ namespace FamilyBrowser
 
                 symbols.Add(FamilyData);
             }
-
 
             if (symbols.Count == 1)
             {

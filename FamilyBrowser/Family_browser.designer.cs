@@ -179,7 +179,7 @@
             this.treeView_directory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeView_directory.ContextMenuStrip = this.contextMenuStrip_project;
+            this.treeView_directory.ContextMenuStrip = this.contextMenuStrip_directory;
             this.treeView_directory.Location = new System.Drawing.Point(6, 20);
             this.treeView_directory.Name = "treeView_directory";
             this.treeView_directory.Size = new System.Drawing.Size(348, 407);
@@ -198,7 +198,7 @@
             this.载入实例ToolStripMenuItem.Name = "载入实例ToolStripMenuItem";
             this.载入实例ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.载入实例ToolStripMenuItem.Text = "创建实例";
-            this.载入实例ToolStripMenuItem.Click += new System.EventHandler(this.local创建实例ToolStripMenuItem_Click);
+            this.载入实例ToolStripMenuItem.Click += new System.EventHandler(this.project创建实例ToolStripMenuItem_Click);
             // 
             // 刷新ToolStripMenuItem
             // 
@@ -248,14 +248,14 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "创建实例";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.directory创建实例toolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2.Text = "刷新";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.dirctory刷新toolStripMenuItem_Click);
             // 

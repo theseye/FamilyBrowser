@@ -23,15 +23,17 @@ namespace FamilyBrowser
 
         public static string fileName;
 
-        public static string familyName;
+        public string familyName;
 
-        public static Family_browser Form_Browser;
+        public static Family_browser Family_Browser;
 
         public UIDocument uidoc;
 
         public ExternalEvent exEvent;
 
         public List<FamilyData> Data;
+
+        public List<string> folder_path;
 
         public Family_browser(UIDocument uidoc, ExternalEvent exEvent, List<FamilyData> Data)
         {
@@ -41,7 +43,7 @@ namespace FamilyBrowser
 
             this.Data = Data;
 
-            Form_Browser = this;
+            Family_Browser = this;
 
             InitializeComponent();
         }
@@ -53,9 +55,9 @@ namespace FamilyBrowser
 
         private void Family_public_Load(object sender, EventArgs e)
         {
-            new Thread(fresh_tabPage_cloud).Start();
+            fresh_tabPage_cloud();
 
-            new Thread(fresh_door).Start();
+            fresh_door();
         }
 
         void fresh_tabPage_cloud()
@@ -186,7 +188,11 @@ namespace FamilyBrowser
             {
                 familyName = listView.SelectedItems[0].Text;
 
-                fileName = Path.Combine(Path.GetTempPath(), "Bimcc", familyName) + ".rfa";
+                var directory = Path.Combine(Path.GetTempPath(), "Bimcc");
+
+                Directory.CreateDirectory(directory);
+
+                fileName = Path.Combine(directory, familyName + ".rfa");
 
                 if (File.Exists(fileName))
                 {
@@ -198,6 +204,8 @@ namespace FamilyBrowser
 
                     http.DownloadFile("http://img01.pinming.cn/8a9b6c3d6209756f01621d38a19a01de.rfa?Expires=1532929251&OSSAccessKeyId=LTAI8ZbJOm3c5VVZ&Signature=dOA6DRrM2eQxtfg7qwjtYpvO73c%3D", fileName);
                 }
+
+                Hide();
 
                 exEvent.Raise();
             }
@@ -225,9 +233,9 @@ namespace FamilyBrowser
                 //云
                 case 0:
 
-                    new Thread(fresh_tabPage_cloud).Start();
+                    fresh_tabPage_cloud();
 
-                    new Thread(fresh_door).Start();
+                    fresh_door();
 
                     break;
 
@@ -245,24 +253,6 @@ namespace FamilyBrowser
             }
         }
 
-        private void local创建实例ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (treeView_project.SelectedNode == null)
-            {
-                return;
-            }
-
-            foreach (var item in Data)
-            {
-                if (treeView_project.SelectedNode.Text == item.symbol_name)
-                {
-                    Hide();
-
-                    uidoc.PostRequestForElementTypePlacement(item.symbol);
-                }
-            }
-        }
-
         private void project刷新ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fresh_project();
@@ -270,12 +260,32 @@ namespace FamilyBrowser
 
         private void dirctory刷新toolStripMenuItem_Click(object sender, EventArgs e)
         {
+            folder_path = new List<string>();
 
+            if (folderBrowserDialog.SelectedPath.Length > 0)
+            {
+                treeView_directory.Nodes.Clear();
 
+                var files = Directory.GetFiles(folderBrowserDialog.SelectedPath);
+
+                foreach (var item in files)
+                {
+                    var name = item.Substring(item.LastIndexOf("\\") + 1);
+
+                    if (name.Contains("rfa"))
+                    {
+                        name = name.Remove(name.LastIndexOf("."));
+
+                        folder_path.Add(item);
+
+                        treeView_directory.Nodes.Add(name);
+                    }
+                }
+            }
         }
-        public List<string> folder_path;
 
         private void button_folder_Click(object sender, EventArgs e)
+
         {
             folder_path = new List<string>();
 
@@ -304,20 +314,33 @@ namespace FamilyBrowser
 
         private void directory创建实例toolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (treeView_directory.SelectedNode == null)
-            {
-                return;
-            }
-
             foreach (var item in folder_path)
             {
                 if (item.Contains(treeView_directory.SelectedNode.Text))
                 {
-                    familyName = treeView_directory.SelectedNode.Text;
-
                     fileName = item;
 
+                    Hide();
+
                     exEvent.Raise();
+                }
+            }
+        }
+
+        private void project创建实例ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (treeView_project.SelectedNode == null)
+            {
+                return;
+            }
+
+            foreach (var item in Data)
+            {
+                if (treeView_project.SelectedNode.Text == item.symbol_name)
+                {
+                    Hide();
+
+                    uidoc.PostRequestForElementTypePlacement(item.symbol);
                 }
             }
         }
