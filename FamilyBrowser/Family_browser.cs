@@ -55,12 +55,12 @@ namespace FamilyBrowser
 
         private void Family_public_Load(object sender, EventArgs e)
         {
-            fresh_tabPage_cloud();
+            Fresh_tabPage_cloud();
 
-            fresh_door();
+            Fresh_door();
         }
 
-        void fresh_tabPage_cloud()
+        void Fresh_tabPage_cloud()
         {
             treeView_cloud.Nodes.Clear();
 
@@ -76,13 +76,14 @@ namespace FamilyBrowser
 
             foreach (var item in jsonData.list)
             {
-                var FamilyData = new FamilyData();
+                var FamilyData = new FamilyData
+                {
+                    parent_id = item["parent_id"].ToString(),
 
-                FamilyData.parent_id = item["parent_id"].ToString();
+                    folder_id = item["folder_id"].ToString(),
 
-                FamilyData.folder_id = item["folder_id"].ToString();
-
-                FamilyData.folder_name = item["folder_name"].ToString();
+                    folder_name = item["folder_name"].ToString()
+                };
 
                 if (FamilyData.parent_id == "")
                 {
@@ -116,7 +117,7 @@ namespace FamilyBrowser
             }
         }
 
-        void fresh_door()
+        void Fresh_door()
         {
             listView.Items.Clear();
 
@@ -132,7 +133,7 @@ namespace FamilyBrowser
             }
         }
 
-        void fresh_project()
+        void Fresh_project()
         {
             treeView_project.Nodes.Clear();
 
@@ -178,7 +179,7 @@ namespace FamilyBrowser
         {
             if (e.Node.Text == "门")
             {
-                fresh_door();
+                Fresh_door();
             }
         }
 
@@ -233,16 +234,16 @@ namespace FamilyBrowser
                 //云
                 case 0:
 
-                    fresh_tabPage_cloud();
+                    Fresh_tabPage_cloud();
 
-                    fresh_door();
+                    Fresh_door();
 
                     break;
 
                 //本地
                 case 1:
 
-                    fresh_project();
+                    Fresh_project();
 
                     break;
 
@@ -255,7 +256,7 @@ namespace FamilyBrowser
 
         private void project刷新ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fresh_project();
+            Fresh_project();
         }
 
         private void dirctory刷新toolStripMenuItem_Click(object sender, EventArgs e)

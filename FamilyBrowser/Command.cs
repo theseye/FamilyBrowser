@@ -31,23 +31,23 @@ namespace FamilyBrowser
 
             //收集所有FamilyData的信息，并储存在Data里
             var Data = new List<FamilyData>();
-            foreach (var item in family_collect)
+
+            foreach (Family item in family_collect)
             {
-                var family = item as Family;
-
-                foreach (var symbol_id in family.GetFamilySymbolIds())
+                foreach (var symbol_id in item.GetFamilySymbolIds())
                 {
-                    var FamilyData = new FamilyData();
+                    var symbol = item.Document.GetElement(symbol_id) as FamilySymbol;
 
-                    FamilyData.family_name = family.Name;
+                    var FamilyData = new FamilyData
+                    {
+                        family_name = item.Name,
 
-                    var symbol = family.Document.GetElement(symbol_id) as FamilySymbol;
+                        symbol_name = symbol.Name,
 
-                    FamilyData.symbol_name = symbol.Name;
+                        category_name = symbol.Category.Name,
 
-                    FamilyData.category_name = symbol.Category.Name;
-
-                    FamilyData.symbol = symbol;
+                        symbol = symbol
+                    };
 
                     Data.Add(FamilyData);
                 }
