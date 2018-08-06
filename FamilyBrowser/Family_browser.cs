@@ -31,7 +31,7 @@ namespace FamilyBrowser
 
         public ExternalEvent exEvent;
 
-        public List<FamilyData> Data;
+        public List<Family_Data> Data;
 
         public List<string> folder_path;
 
@@ -40,7 +40,7 @@ namespace FamilyBrowser
             InitializeComponent();
         }
 
-        public Family_Browser(UIDocument uidoc, ExternalEvent exEvent, List<FamilyData> Data)
+        public Family_Browser(UIDocument uidoc, ExternalEvent exEvent, List<Family_Data> Data)
         {
             this.uidoc = uidoc;
 
@@ -72,13 +72,13 @@ namespace FamilyBrowser
 
             JsonData jsonData = JsonConvert.DeserializeObject<JsonData>(response.Content);
 
-            var parent = new List<FamilyData>();
+            var parent = new List<Family_Data>();
 
-            var child = new List<FamilyData>();
+            var child = new List<Family_Data>();
 
             foreach (var item in jsonData.list)
             {
-                var FamilyData = new FamilyData
+                var FamilyData = new Family_Data
                 {
                     parent_id = item["parent_id"].ToString(),
 

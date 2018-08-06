@@ -20,9 +20,9 @@ namespace FamilyBrowser
         }
         public UIDocument uidoc;
 
-        public List<FamilyData> symbols = new List<FamilyData>();
+        public List<Family_Data> symbols = new List<Family_Data>();
 
-        public Symbol_Choose(UIDocument uidoc, List<FamilyData> symbols)
+        public Symbol_Choose(UIDocument uidoc, List<Family_Data> symbols)
         {
             InitializeComponent();
 
