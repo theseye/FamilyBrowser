@@ -60,11 +60,11 @@
     <Compile Include="Application.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="FamilyData.cs" />
-    <Compile Include="Family_browser.cs">
+    <Compile Include="Family_Browser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Family_browser.designer.cs">
-      <DependentUpon>Family_browser.cs</DependentUpon>
+    <Compile Include="Family_Browser.designer.cs">
+      <DependentUpon>Family_Browser.cs</DependentUpon>
     </Compile>
     <Compile Include="LoadFamily.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,24 +73,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Symbol_choose.cs">
+    <Compile Include="Symbol_Choose.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Symbol_choose.Designer.cs">
-      <DependentUpon>Symbol_choose.cs</DependentUpon>
+    <Compile Include="Symbol_Choose.Designer.cs">
+      <DependentUpon>Symbol_Choose.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Family_browser.resx">
-      <DependentUpon>Family_browser.cs</DependentUpon>
+    <EmbeddedResource Include="Family_Browser.resx">
+      <DependentUpon>Family_Browser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Symbol_choose.resx">
-      <DependentUpon>Symbol_choose.cs</DependentUpon>
+    <EmbeddedResource Include="Symbol_Choose.resx">
+      <DependentUpon>Symbol_Choose.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

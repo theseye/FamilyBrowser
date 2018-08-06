@@ -8,7 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using static FamilyBrowser.Family_browser;
+using static FamilyBrowser.Family_Browser;
 
 namespace FamilyBrowser
 {
@@ -36,7 +36,7 @@ namespace FamilyBrowser
 
         void ControlledApplication_DocumentOpened(object sender, DocumentOpenedEventArgs e)
         {
-            Family_browser.Family_Browser = null;
+            Family_Browser.Family_Browser = null;
         }
     }
 }

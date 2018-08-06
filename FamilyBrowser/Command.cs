@@ -11,7 +11,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using static FamilyBrowser.Family_browser;
+using static FamilyBrowser.Family_Browser;
 
 
 namespace FamilyBrowser
@@ -53,15 +53,15 @@ namespace FamilyBrowser
 
             var exEvent = ExternalEvent.Create(new LoadFamily());
 
-            if (Family_Browser == null)
+            if (Family_Browser.Family_Browser == null)
             {
-                var browser = new Family_browser(uidoc, exEvent, Data);
+                var browser = new Family_Browser(uidoc, exEvent, Data);
 
                 browser.ShowDialog();
             }
             else
             {
-                Family_Browser.Show();
+                Family_Browser.Family_Browser.Show();
             }
 
             return Result.Succeeded;

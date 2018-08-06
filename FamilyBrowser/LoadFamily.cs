@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using static FamilyBrowser.Family_browser;
+using static FamilyBrowser.Family_Browser;
 
 namespace FamilyBrowser
 {
@@ -26,7 +26,7 @@ namespace FamilyBrowser
             {
                 trans.Start();
 
-                uidoc.Document.LoadFamily(Family_browser.fileName, out Family);
+                uidoc.Document.LoadFamily(Family_Browser.fileName, out Family);
 
                 trans.Commit();
             }
@@ -56,7 +56,7 @@ namespace FamilyBrowser
             //如果族类型数量大于1，就出现选择窗体
             else
             {
-                new Symbol_choose(uidoc, symbols).ShowDialog();
+                new Symbol_Choose(uidoc, symbols).ShowDialog();
             }
         }
 

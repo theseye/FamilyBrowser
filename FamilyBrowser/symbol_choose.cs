@@ -8,13 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static FamilyBrowser.Family_browser;
+using static FamilyBrowser.Family_Browser;
 
 namespace FamilyBrowser
 {
-    public partial class Symbol_choose : Form
+    public partial class Symbol_Choose : Form
     {
-        public Symbol_choose()
+        public Symbol_Choose()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace FamilyBrowser
 
         public List<FamilyData> symbols = new List<FamilyData>();
 
-        public Symbol_choose(UIDocument uidoc, List<FamilyData> symbols)
+        public Symbol_Choose(UIDocument uidoc, List<FamilyData> symbols)
         {
             InitializeComponent();
 
@@ -49,7 +49,7 @@ namespace FamilyBrowser
                     {
                         Close();
 
-                        Family_Browser.Hide();
+                        Family_Browser.Family_Browser.Hide();
 
                         uidoc.PostRequestForElementTypePlacement(item.symbol);
                     }
