@@ -55,9 +55,9 @@ namespace FamilyBrowser
 
             if (Family_Browser == null)
             {
-                var Form_browser = new Family_browser(uidoc, exEvent, Data);
+                var browser = new Family_browser(uidoc, exEvent, Data);
 
-                Form_browser.ShowDialog();
+                browser.ShowDialog();
             }
             else
             {

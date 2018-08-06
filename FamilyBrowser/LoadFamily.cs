@@ -56,7 +56,7 @@ namespace FamilyBrowser
             //如果族类型数量大于1，就出现选择窗体
             else
             {
-                new symbol_choose(uidoc, symbols).ShowDialog();
+                new Symbol_choose(uidoc, symbols).ShowDialog();
             }
         }
 

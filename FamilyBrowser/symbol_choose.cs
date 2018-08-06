@@ -12,9 +12,9 @@ using static FamilyBrowser.Family_browser;
 
 namespace FamilyBrowser
 {
-    public partial class symbol_choose : Form
+    public partial class Symbol_choose : Form
     {
-        public symbol_choose()
+        public Symbol_choose()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace FamilyBrowser
 
         public List<FamilyData> symbols = new List<FamilyData>();
 
-        public symbol_choose(UIDocument uidoc, List<FamilyData> symbols)
+        public Symbol_choose(UIDocument uidoc, List<FamilyData> symbols)
         {
             InitializeComponent();
 

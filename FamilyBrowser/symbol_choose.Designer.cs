@@ -1,6 +1,6 @@
 ﻿namespace FamilyBrowser
 {
-    partial class symbol_choose
+    partial class Symbol_choose
     {
         /// <summary>
         /// Required designer variable.

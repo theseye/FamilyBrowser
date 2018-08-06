@@ -73,11 +73,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="symbol_choose.cs">
+    <Compile Include="Symbol_choose.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="symbol_choose.Designer.cs">
-      <DependentUpon>symbol_choose.cs</DependentUpon>
+    <Compile Include="Symbol_choose.Designer.cs">
+      <DependentUpon>Symbol_choose.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools.cs" />
   </ItemGroup>
@@ -89,8 +89,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="symbol_choose.resx">
-      <DependentUpon>symbol_choose.cs</DependentUpon>
+    <EmbeddedResource Include="Symbol_choose.resx">
+      <DependentUpon>Symbol_choose.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

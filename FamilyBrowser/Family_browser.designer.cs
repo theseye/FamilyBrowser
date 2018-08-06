@@ -273,7 +273,6 @@
             this.Text = "Family_public";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_browser_FormClosing);
             this.Load += new System.EventHandler(this.Family_public_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form_browser_KeyPress);
             this.contextMenuStrip_cloud.ResumeLayout(false);
             this.tabPage_cloud.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);

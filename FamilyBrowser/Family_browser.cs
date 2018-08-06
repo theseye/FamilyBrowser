@@ -35,6 +35,11 @@ namespace FamilyBrowser
 
         public List<string> folder_path;
 
+        public Family_browser()
+        {
+            InitializeComponent();
+        }
+
         public Family_browser(UIDocument uidoc, ExternalEvent exEvent, List<FamilyData> Data)
         {
             this.uidoc = uidoc;
@@ -45,11 +50,6 @@ namespace FamilyBrowser
 
             Family_Browser = this;
 
-            InitializeComponent();
-        }
-
-        public Family_browser()
-        {
             InitializeComponent();
         }
 
@@ -148,9 +148,9 @@ namespace FamilyBrowser
                 category.Add(item.category_name);
             }
 
-            foreach (var item in category)
+            foreach (var _category in category)
             {
-                var category_node = treeView_project.Nodes.Add(item);
+                var category_node = treeView_project.Nodes.Add(_category);
 
                 var family = new HashSet<string>();
 
@@ -216,11 +216,6 @@ namespace FamilyBrowser
             }
         }
 
-        private void Form_browser_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
         private void listView_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             familyName = listView.SelectedItems[0].Text;
@@ -271,9 +266,9 @@ namespace FamilyBrowser
             {
                 treeView_directory.Nodes.Clear();
 
-                var files = Directory.GetFiles(folderBrowserDialog.SelectedPath);
+                var paths = Directory.GetFiles(folderBrowserDialog.SelectedPath);
 
-                foreach (var item in files)
+                foreach (var item in paths)
                 {
                     var name = item.Substring(item.LastIndexOf("\\") + 1);
 
@@ -298,9 +293,9 @@ namespace FamilyBrowser
             {
                 treeView_directory.Nodes.Clear();
 
-                var files = Directory.GetFiles(folderBrowserDialog.SelectedPath);
+                var paths = Directory.GetFiles(folderBrowserDialog.SelectedPath);
 
-                foreach (var item in files)
+                foreach (var item in paths)
                 {
                     var name = item.Substring(item.LastIndexOf("\\") + 1);
 
@@ -319,6 +314,11 @@ namespace FamilyBrowser
 
         private void directory创建实例toolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (treeView_project.SelectedNode == null)
+            {
+                return;
+            }
+
             foreach (var item in folder_path)
             {
                 if (item.Contains(treeView_directory.SelectedNode.Text))
