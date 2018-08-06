@@ -53,7 +53,7 @@ namespace FamilyBrowser
 
             var exEvent = ExternalEvent.Create(new Family_Load());
 
-            if (Family_Browser.Family_Browser == null)
+            if (Family_Browser.Family_browser == null)
             {
                 var browser = new Family_Browser(uidoc, exEvent, Data);
 
@@ -61,7 +61,7 @@ namespace FamilyBrowser
             }
             else
             {
-                Family_Browser.Family_Browser.Show();
+                Family_Browser.Family_browser.Show();
             }
 
             return Result.Succeeded;

@@ -25,7 +25,7 @@ namespace FamilyBrowser
 
         public string familyName;
 
-        public static Family_Browser Family_Browser;
+        public static Family_Browser Family_browser;
 
         public UIDocument uidoc;
 
@@ -48,7 +48,7 @@ namespace FamilyBrowser
 
             this.Data = Data;
 
-            Family_Browser = this;
+            Family_browser = this;
 
             InitializeComponent();
         }

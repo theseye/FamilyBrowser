@@ -49,7 +49,7 @@ namespace FamilyBrowser
                     {
                         Close();
 
-                        Family_Browser.Family_Browser.Hide();
+                        Family_Browser.Family_browser.Hide();
 
                         uidoc.PostRequestForElementTypePlacement(item.symbol);
                     }
