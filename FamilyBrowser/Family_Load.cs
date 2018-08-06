@@ -11,7 +11,7 @@ using static FamilyBrowser.Family_Browser;
 
 namespace FamilyBrowser
 {
-    class LoadFamily : IExternalEventHandler
+    class Family_Load : IExternalEventHandler
     {
         public void Execute(UIApplication app)
         {
@@ -35,12 +35,12 @@ namespace FamilyBrowser
 
             ISet<ElementId> FamilySymbolIds = Family.GetFamilySymbolIds();
 
-            var symbols = new List<FamilyData>();
+            var symbols = new List<Family_Data>();
 
             //把Symbol的name,symbol储存在symbols里，以便调用
             foreach (var FamilySymbolId in FamilySymbolIds)
             {
-                var FamilyData = new FamilyData();
+                var FamilyData = new Family_Data();
 
                 FamilyData.symbol = Family.Document.GetElement(FamilySymbolId) as FamilySymbol;
 

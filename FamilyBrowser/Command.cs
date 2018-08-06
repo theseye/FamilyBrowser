@@ -28,7 +28,7 @@ namespace FamilyBrowser
             var family_collect = new FilteredElementCollector(uidoc.Document).OfClass(typeof(Family));
 
             //收集所有FamilyData的信息，并储存在Data里
-            var Data = new List<FamilyData>();
+            var Data = new List<Family_Data>();
 
             foreach (Family item in family_collect)
             {
@@ -36,7 +36,7 @@ namespace FamilyBrowser
                 {
                     var symbol = item.Document.GetElement(symbol_id) as FamilySymbol;
 
-                    var FamilyData = new FamilyData
+                    var FamilyData = new Family_Data
                     {
                         family_name = item.Name,
 
@@ -51,7 +51,7 @@ namespace FamilyBrowser
                 }
             }
 
-            var exEvent = ExternalEvent.Create(new LoadFamily());
+            var exEvent = ExternalEvent.Create(new Family_Load());
 
             if (Family_Browser.Family_Browser == null)
             {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FamilyBrowser
 {
-    public class FamilyData
+    public class Family_Data
     {
         public string parent_id { get; set; }
 

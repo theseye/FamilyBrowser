@@ -59,14 +59,14 @@
   <ItemGroup>
     <Compile Include="Application.cs" />
     <Compile Include="Command.cs" />
-    <Compile Include="FamilyData.cs" />
+    <Compile Include="Family_Data.cs" />
     <Compile Include="Family_Browser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Family_Browser.designer.cs">
       <DependentUpon>Family_Browser.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoadFamily.cs" />
+    <Compile Include="Family_Load.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -94,7 +94,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="FamilyBrowser.addin">
+    <None Include="Family_Browser.addin">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
