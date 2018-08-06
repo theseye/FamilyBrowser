@@ -35,7 +35,7 @@
             // 
             // button_ok
             // 
-            this.button_ok.Location = new System.Drawing.Point(181, 212);
+            this.button_ok.Location = new System.Drawing.Point(126, 200);
             this.button_ok.Name = "button_ok";
             this.button_ok.Size = new System.Drawing.Size(75, 23);
             this.button_ok.TabIndex = 1;
@@ -46,7 +46,7 @@
             // button_cancel
             // 
             this.button_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button_cancel.Location = new System.Drawing.Point(262, 212);
+            this.button_cancel.Location = new System.Drawing.Point(207, 200);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(75, 23);
             this.button_cancel.TabIndex = 2;
@@ -58,7 +58,7 @@
             // 
             this.listView.Location = new System.Drawing.Point(41, 41);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(296, 128);
+            this.listView.Size = new System.Drawing.Size(241, 128);
             this.listView.TabIndex = 3;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.List;
@@ -68,10 +68,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button_cancel;
-            this.ClientSize = new System.Drawing.Size(397, 280);
+            this.ClientSize = new System.Drawing.Size(329, 259);
             this.Controls.Add(this.listView);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_ok);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "symbol_choose";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "symbol_choose";

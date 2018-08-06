@@ -42,24 +42,24 @@
             this.button_folder = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.treeView_directory = new System.Windows.Forms.TreeView();
-            this.contextMenuStrip_project = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.载入实例ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.treeView_project = new System.Windows.Forms.TreeView();
-            this.tabPage_company = new System.Windows.Forms.TabPage();
             this.contextMenuStrip_directory = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.treeView_project = new System.Windows.Forms.TreeView();
+            this.contextMenuStrip_project = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.载入实例ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage_company = new System.Windows.Forms.TabPage();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.contextMenuStrip_cloud.SuspendLayout();
             this.tabPage_cloud.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage_local.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.contextMenuStrip_project.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.contextMenuStrip_directory.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.contextMenuStrip_project.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip_cloud
@@ -185,27 +185,27 @@
             this.treeView_directory.Size = new System.Drawing.Size(348, 407);
             this.treeView_directory.TabIndex = 1;
             // 
-            // contextMenuStrip_project
+            // contextMenuStrip_directory
             // 
-            this.contextMenuStrip_project.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.载入实例ToolStripMenuItem,
-            this.刷新ToolStripMenuItem});
-            this.contextMenuStrip_project.Name = "contextMenuStrip_local";
-            this.contextMenuStrip_project.Size = new System.Drawing.Size(125, 48);
+            this.contextMenuStrip_directory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.contextMenuStrip_directory.Name = "contextMenuStrip_local";
+            this.contextMenuStrip_directory.Size = new System.Drawing.Size(125, 48);
             // 
-            // 载入实例ToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            this.载入实例ToolStripMenuItem.Name = "载入实例ToolStripMenuItem";
-            this.载入实例ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.载入实例ToolStripMenuItem.Text = "创建实例";
-            this.载入实例ToolStripMenuItem.Click += new System.EventHandler(this.project创建实例ToolStripMenuItem_Click);
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.toolStripMenuItem1.Text = "创建实例";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.directory创建实例toolStripMenuItem_Click);
             // 
-            // 刷新ToolStripMenuItem
+            // toolStripMenuItem2
             // 
-            this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
-            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.刷新ToolStripMenuItem.Text = "刷新";
-            this.刷新ToolStripMenuItem.Click += new System.EventHandler(this.project刷新ToolStripMenuItem_Click);
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
+            this.toolStripMenuItem2.Text = "刷新";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.dirctory刷新toolStripMenuItem_Click);
             // 
             // groupBox2
             // 
@@ -228,6 +228,28 @@
             this.treeView_project.Size = new System.Drawing.Size(348, 407);
             this.treeView_project.TabIndex = 1;
             // 
+            // contextMenuStrip_project
+            // 
+            this.contextMenuStrip_project.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.载入实例ToolStripMenuItem,
+            this.刷新ToolStripMenuItem});
+            this.contextMenuStrip_project.Name = "contextMenuStrip_local";
+            this.contextMenuStrip_project.Size = new System.Drawing.Size(125, 48);
+            // 
+            // 载入实例ToolStripMenuItem
+            // 
+            this.载入实例ToolStripMenuItem.Name = "载入实例ToolStripMenuItem";
+            this.载入实例ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.载入实例ToolStripMenuItem.Text = "创建实例";
+            this.载入实例ToolStripMenuItem.Click += new System.EventHandler(this.project创建实例ToolStripMenuItem_Click);
+            // 
+            // 刷新ToolStripMenuItem
+            // 
+            this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
+            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.刷新ToolStripMenuItem.Text = "刷新";
+            this.刷新ToolStripMenuItem.Click += new System.EventHandler(this.project刷新ToolStripMenuItem_Click);
+            // 
             // tabPage_company
             // 
             this.tabPage_company.Location = new System.Drawing.Point(4, 22);
@@ -237,28 +259,6 @@
             this.tabPage_company.Text = "    企业族库    ";
             this.tabPage_company.UseVisualStyleBackColor = true;
             // 
-            // contextMenuStrip_directory
-            // 
-            this.contextMenuStrip_directory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
-            this.contextMenuStrip_directory.Name = "contextMenuStrip_local";
-            this.contextMenuStrip_directory.Size = new System.Drawing.Size(125, 48);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem1.Text = "创建实例";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.directory创建实例toolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem2.Text = "刷新";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.dirctory刷新toolStripMenuItem_Click);
-            // 
             // Family_browser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -266,6 +266,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(852, 492);
             this.Controls.Add(this.tabControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
             this.Name = "Family_browser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -278,9 +279,9 @@
             this.tabControl.ResumeLayout(false);
             this.tabPage_local.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.contextMenuStrip_project.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.contextMenuStrip_directory.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.contextMenuStrip_project.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
