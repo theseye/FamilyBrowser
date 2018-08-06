@@ -270,7 +270,7 @@
             this.KeyPreview = true;
             this.Name = "Family_Browser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FamilyBrowser";
+            this.Text = "族库浏览器";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_browser_FormClosing);
             this.Load += new System.EventHandler(this.Family_public_Load);
             this.contextMenuStrip_cloud.ResumeLayout(false);
