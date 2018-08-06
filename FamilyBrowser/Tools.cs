@@ -18,7 +18,7 @@ namespace FamliyBrowser
     {
         public static void ShowMessageBox(string message)
         {
-            System.Windows.MessageBox.Show(message, "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show(message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static BitmapSource GetImage(IntPtr bm)
