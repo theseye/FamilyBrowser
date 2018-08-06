@@ -1,9 +1,9 @@
 ﻿using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using EasyHttp.Http;
 using FamliyBrowser;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -64,11 +64,13 @@ namespace FamilyBrowser
         {
             treeView_cloud.Nodes.Clear();
 
-            var http = new HttpClient();
+            var client = new RestClient("http://www.hibim.com/gateWay.do?s=H4sIAAAAAAAEAMssqSxItTUytlDLTc0r9UyxNVRLy89JSS0KAYkbqxXnlxYlp4I5Ac5qxZnpebYWhimpyaaGFmmpFqYpaYYmaWbGSWYpFqnGxmnmFiaWpgAZbIJBUwAAAA%3d%3d");
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("Postman-Token", "ba1b14be-381b-419e-adaa-28c64d6f3023");
+            request.AddHeader("Cache-Control", "no-cache");
+            IRestResponse response = client.Execute(request);
 
-            var response = http.Get("http://www.hibim.com/gateWay.do?s=H4sIAAAAAAAEAMssqSxItTUytlDLTc0r9UyxNVRLy89JSS0KAYkbqxXnlxYlp4I5Ac5qxZnpebYWhimpyaaGFmmpFqYpaYYmaWbGSWYpFqnGxmnmFiaWpgAZbIJBUwAAAA%3d%3d").RawText;
-
-            JsonData jsonData = JsonConvert.DeserializeObject<JsonData>(response);
+            JsonData jsonData = JsonConvert.DeserializeObject<JsonData>(response.Content);
 
             var parent = new List<FamilyData>();
 
@@ -121,11 +123,13 @@ namespace FamilyBrowser
         {
             listView.Items.Clear();
 
-            var http = new HttpClient();
+            var client = new RestClient("http://www.hibim.com/gateWay.do?s=H4sIAAAAAAAEAMssqSxItTUyNlNLy89JSS3yTLE1VCtITE8FUsWZVam2xgZqxfmlRcmpISCFAc5A0fQ8WwODJMsUE2ODZCOjZKMUy0RLAwszQ5MUS0PjJAtDS8MkAPQLxAdXAAAA");
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("Postman-Token", "1edd33c1-a69d-4d66-8e44-8c799c52d365");
+            request.AddHeader("Cache-Control", "no-cache");
+            IRestResponse response = client.Execute(request);
 
-            var response = http.Get("http://www.hibim.com/gateWay.do?s=H4sIAAAAAAAEAMssqSxItTUyNlNLy89JSS3yTLE1VCtITE8FUsWZVam2xgZqxfmlRcmpISCFAc5A0fQ8WwODJMsUE2ODZCOjZKMUy0RLAwszQ5MUS0PjJAtDS8MkAPQLxAdXAAAA").RawText;
-
-            JsonData jsonData = JsonConvert.DeserializeObject<JsonData>(response);
+            JsonData jsonData = JsonConvert.DeserializeObject<JsonData>(response.Content);
 
             foreach (var item in jsonData.list)
             {

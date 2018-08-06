@@ -22,8 +22,6 @@ namespace FamilyBrowser
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
-
             UIDocument uidoc = commandData.Application.ActiveUIDocument;
 
             //找到当前文档所有族
@@ -67,40 +65,6 @@ namespace FamilyBrowser
             }
 
             return Result.Succeeded;
-        }
-
-        private Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
-        {
-            var filename = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-
-            if (args.Name.Contains("EasyHttp"))
-            {
-                filename = Path.Combine(filename, "EasyHttp.dll");
-
-                if (File.Exists(filename))
-                {
-                    return Assembly.LoadFrom(filename);
-                }
-            }
-            else if (args.Name.Contains("JsonFx"))
-            {
-                filename = Path.Combine(filename, "JsonFx.dll");
-
-                if (File.Exists(filename))
-                {
-                    return System.Reflection.Assembly.LoadFrom(filename);
-                }
-            }
-            else if (args.Name.Contains("Newtonsoft.Json"))
-            {
-                filename = Path.Combine(filename, "Newtonsoft.Json.dll");
-
-                if (File.Exists(filename))
-                {
-                    return Assembly.LoadFrom(filename);
-                }
-            }
-            return null;
         }
     }
 }
