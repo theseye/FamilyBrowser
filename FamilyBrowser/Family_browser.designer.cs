@@ -1,6 +1,6 @@
 ﻿namespace FamilyBrowser
 {
-    partial class Family_browser
+    partial class Family_Browser
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Family_browser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Family_Browser));
             this.contextMenuStrip_cloud = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.创建实例ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
@@ -259,7 +259,7 @@
             this.tabPage_company.Text = "    企业族库    ";
             this.tabPage_company.UseVisualStyleBackColor = true;
             // 
-            // Family_browser
+            // Family_Browser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,9 +268,9 @@
             this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
-            this.Name = "Family_browser";
+            this.Name = "Family_Browser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Family_public";
+            this.Text = "FamilyBrowser";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_browser_FormClosing);
             this.Load += new System.EventHandler(this.Family_public_Load);
             this.contextMenuStrip_cloud.ResumeLayout(false);

@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace FamilyBrowser
 {
-    public partial class Family_browser : System.Windows.Forms.Form
+    public partial class Family_Browser : System.Windows.Forms.Form
     {
         public class JsonData
         {
@@ -25,7 +25,7 @@ namespace FamilyBrowser
 
         public string familyName;
 
-        public static Family_browser Family_Browser;
+        public static Family_Browser Family_Browser;
 
         public UIDocument uidoc;
 
@@ -35,12 +35,12 @@ namespace FamilyBrowser
 
         public List<string> folder_path;
 
-        public Family_browser()
+        public Family_Browser()
         {
             InitializeComponent();
         }
 
-        public Family_browser(UIDocument uidoc, ExternalEvent exEvent, List<FamilyData> Data)
+        public Family_Browser(UIDocument uidoc, ExternalEvent exEvent, List<FamilyData> Data)
         {
             this.uidoc = uidoc;
 
