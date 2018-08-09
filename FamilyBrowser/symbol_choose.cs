@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static FamilyBrowser.Family_Browser;
 
 namespace FamilyBrowser
 {
@@ -61,6 +60,8 @@ namespace FamilyBrowser
         private void button_cancel_Click(object sender, EventArgs e)
         {
             Close();
+
+            Family_Browser.Family_browser.ShowDialog();
         }
     }
 }

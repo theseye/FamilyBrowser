@@ -314,40 +314,40 @@ namespace FamilyBrowser
 
         private void directory创建实例toolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (treeView_project.SelectedNode == null)
+            //已知catch内容为:SelectedNode=null
+            try
             {
-                return;
-            }
-
-            foreach (var item in folder_path)
-            {
-                if (item.Contains(treeView_directory.SelectedNode.Text))
+                foreach (var item in folder_path)
                 {
-                    fileName = item;
+                    if (item.Contains(treeView_directory.SelectedNode.Text))
+                    {
+                        fileName = item;
 
-                    Hide();
+                        Hide();
 
-                    exEvent.Raise();
+                        exEvent.Raise();
+                    }
                 }
             }
+            catch (Exception) { }
         }
 
         private void project创建实例ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (treeView_project.SelectedNode == null)
+            //已知catch内容为:SelectedNode=null
+            try
             {
-                return;
-            }
-
-            foreach (var item in Data)
-            {
-                if (treeView_project.SelectedNode.Text == item.symbol_name)
+                foreach (var item in Data)
                 {
-                    Hide();
+                    if (treeView_project.SelectedNode.Text == item.symbol_name)
+                    {
+                        Hide();
 
-                    uidoc.PostRequestForElementTypePlacement(item.symbol);
+                        uidoc.PostRequestForElementTypePlacement(item.symbol);
+                    }
                 }
             }
+            catch (Exception) { }
         }
     }
 }
