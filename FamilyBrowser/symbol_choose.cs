@@ -14,13 +14,14 @@ namespace FamilyBrowser
 {
     public partial class Symbol_Choose : Form
     {
+        public UIDocument uidoc;
+
+        public List<Family_Data> symbols = new List<Family_Data>();
+
         public Symbol_Choose()
         {
             InitializeComponent();
         }
-        public UIDocument uidoc;
-
-        public List<Family_Data> symbols = new List<Family_Data>();
 
         public Symbol_Choose(UIDocument uidoc, List<Family_Data> symbols)
         {
