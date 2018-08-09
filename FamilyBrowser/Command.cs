@@ -11,7 +11,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using static FamilyBrowser.Family_Browser;
 
 
 namespace FamilyBrowser
@@ -61,7 +60,7 @@ namespace FamilyBrowser
             }
             else
             {
-                Family_Browser.Family_browser.Show();
+                Family_Browser.Family_browser.ShowDialog();
             }
 
             return Result.Succeeded;
