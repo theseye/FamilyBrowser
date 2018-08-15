@@ -42,16 +42,16 @@ namespace FamilyBrowser
             {
                 var FamilyData = new FamilyData();
 
-                FamilyData.symbol = Family.Document.GetElement(FamilySymbolId) as FamilySymbol;
+                FamilyData.family_symbol = Family.Document.GetElement(FamilySymbolId) as FamilySymbol;
 
-                FamilyData.symbol_name = FamilyData.symbol.Name;
+                FamilyData.symbol_name = FamilyData.family_symbol.Name;
 
                 symbols.Add(FamilyData);
             }
 
             if (symbols.Count == 1)
             {
-                uidoc.PostRequestForElementTypePlacement(symbols[0].symbol);
+                uidoc.PostRequestForElementTypePlacement(symbols[0].family_symbol);
             }
             //如果族类型数量大于1，就出现选择窗体
             else

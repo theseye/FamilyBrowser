@@ -24,16 +24,16 @@ namespace FamilyBrowser
             UIDocument uidoc = commandData.Application.ActiveUIDocument;
 
             //找到当前文档所有族
-            var family_collect = new FilteredElementCollector(uidoc.Document).OfClass(typeof(Family));
+            var FamilyCollector = new FilteredElementCollector(uidoc.Document).OfClass(typeof(Family));
 
             //收集所有FamilyData的信息，并储存在Data里
             var Data = new List<FamilyData>();
 
-            foreach (Family item in family_collect)
+            foreach (Family item in FamilyCollector)
             {
-                foreach (var symbol_id in item.GetFamilySymbolIds())
+                foreach (var symbolId in item.GetFamilySymbolIds())
                 {
-                    var symbol = item.Document.GetElement(symbol_id) as FamilySymbol;
+                    var symbol = item.Document.GetElement(symbolId) as FamilySymbol;
 
                     var FamilyData = new FamilyData
                     {
@@ -43,7 +43,7 @@ namespace FamilyBrowser
 
                         category_name = symbol.Category.Name,
 
-                        symbol = symbol
+                        family_symbol = symbol
                     };
 
                     Data.Add(FamilyData);

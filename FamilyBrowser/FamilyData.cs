@@ -21,6 +21,6 @@ namespace FamilyBrowser
 
         public string symbol_name { get; set; }
 
-        public FamilySymbol symbol { get; set; }
+        public FamilySymbol family_symbol { get; set; }
     }
 }

@@ -51,7 +51,7 @@ namespace FamilyBrowser
 
                         FamilyBrowser.Family_browser.Hide();
 
-                        uidoc.PostRequestForElementTypePlacement(item.symbol);
+                        uidoc.PostRequestForElementTypePlacement(item.family_symbol);
                     }
                 }
             }

@@ -343,7 +343,7 @@ namespace FamilyBrowser
                     {
                         Hide();
 
-                        uidoc.PostRequestForElementTypePlacement(item.symbol);
+                        uidoc.PostRequestForElementTypePlacement(item.family_symbol);
                     }
                 }
             }
