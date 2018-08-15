@@ -58,42 +58,42 @@
   <ItemGroup>
     <Compile Include="Application.cs" />
     <Compile Include="Command.cs" />
-    <Compile Include="Family_Data.cs" />
-    <Compile Include="Family_Browser.cs">
+    <Compile Include="FamilyData.cs" />
+    <Compile Include="FamilyBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Family_Browser.designer.cs">
-      <DependentUpon>Family_Browser.cs</DependentUpon>
+    <Compile Include="FamilyBrowser.designer.cs">
+      <DependentUpon>FamilyBrowser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Family_Load.cs" />
+    <Compile Include="FamilyLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Symbol_Choose.cs">
+    <Compile Include="SymbolChoose.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Symbol_Choose.Designer.cs">
-      <DependentUpon>Symbol_Choose.cs</DependentUpon>
+    <Compile Include="SymbolChoose.Designer.cs">
+      <DependentUpon>SymbolChoose.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Family_Browser.resx">
-      <DependentUpon>Family_Browser.cs</DependentUpon>
+    <EmbeddedResource Include="FamilyBrowser.resx">
+      <DependentUpon>FamilyBrowser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Symbol_Choose.resx">
-      <DependentUpon>Symbol_Choose.cs</DependentUpon>
+    <EmbeddedResource Include="SymbolChoose.resx">
+      <DependentUpon>SymbolChoose.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Family_Browser.addin">
+    <None Include="FamilyBrowser.addin">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

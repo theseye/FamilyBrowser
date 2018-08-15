@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace FamilyBrowser
 {
-    public partial class Symbol_Choose : Form
+    public partial class SymbolChoose : Form
     {
         public UIDocument uidoc;
 
-        public List<Family_Data> symbols = new List<Family_Data>();
+        public List<FamilyData> symbols = new List<FamilyData>();
 
-        public Symbol_Choose()
+        public SymbolChoose()
         {
             InitializeComponent();
         }
 
-        public Symbol_Choose(UIDocument uidoc, List<Family_Data> symbols)
+        public SymbolChoose(UIDocument uidoc, List<FamilyData> symbols)
         {
             InitializeComponent();
 
@@ -49,7 +49,7 @@ namespace FamilyBrowser
                     {
                         Close();
 
-                        Family_Browser.Family_browser.Hide();
+                        FamilyBrowser.Family_browser.Hide();
 
                         uidoc.PostRequestForElementTypePlacement(item.symbol);
                     }
@@ -61,7 +61,7 @@ namespace FamilyBrowser
         {
             Close();
 
-            Family_Browser.Family_browser.ShowDialog();
+            FamilyBrowser.Family_browser.ShowDialog();
         }
     }
 }

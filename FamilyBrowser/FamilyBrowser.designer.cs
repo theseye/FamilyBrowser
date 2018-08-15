@@ -1,6 +1,6 @@
 ﻿namespace FamilyBrowser
 {
-    partial class Family_Browser
+    partial class FamilyBrowser
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Family_Browser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FamilyBrowser));
             this.contextMenuStrip_cloud = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.创建实例ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList = new System.Windows.Forms.ImageList(this.components);

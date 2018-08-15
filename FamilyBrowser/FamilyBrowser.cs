@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace FamilyBrowser
 {
-    public partial class Family_Browser : System.Windows.Forms.Form
+    public partial class FamilyBrowser : System.Windows.Forms.Form
     {
         public class JsonData
         {
@@ -25,22 +25,22 @@ namespace FamilyBrowser
 
         public string familyName;
 
-        public static Family_Browser Family_browser;
+        public static FamilyBrowser Family_browser;
 
         public UIDocument uidoc;
 
         public ExternalEvent exEvent;
 
-        public List<Family_Data> Data;
+        public List<FamilyData> Data;
 
         public List<string> folder_path;
 
-        public Family_Browser()
+        public FamilyBrowser()
         {
             InitializeComponent();
         }
 
-        public Family_Browser(UIDocument uidoc, ExternalEvent exEvent, List<Family_Data> Data)
+        public FamilyBrowser(UIDocument uidoc, ExternalEvent exEvent, List<FamilyData> Data)
         {
             this.uidoc = uidoc;
 
@@ -72,13 +72,13 @@ namespace FamilyBrowser
 
             JsonData jsonData = JsonConvert.DeserializeObject<JsonData>(response.Content);
 
-            var parent = new List<Family_Data>();
+            var parent = new List<FamilyData>();
 
-            var child = new List<Family_Data>();
+            var child = new List<FamilyData>();
 
             foreach (var item in jsonData.list)
             {
-                var FamilyData = new Family_Data
+                var FamilyData = new FamilyData
                 {
                     parent_id = item["parent_id"].ToString(),
 

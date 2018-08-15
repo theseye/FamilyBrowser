@@ -7,11 +7,11 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using static FamilyBrowser.Family_Browser;
+using static FamilyBrowser.FamilyBrowser;
 
 namespace FamilyBrowser
 {
-    class Family_Load : IExternalEventHandler
+    class FamilyLoad : IExternalEventHandler
     {
         public void Execute(UIApplication app)
         {
@@ -26,7 +26,7 @@ namespace FamilyBrowser
             {
                 trans.Start();
 
-                uidoc.Document.LoadFamily(Family_Browser.fileName, out Family);
+                uidoc.Document.LoadFamily(FamilyBrowser.fileName, out Family);
 
                 trans.Commit();
             }
@@ -35,12 +35,12 @@ namespace FamilyBrowser
 
             ISet<ElementId> FamilySymbolIds = Family.GetFamilySymbolIds();
 
-            var symbols = new List<Family_Data>();
+            var symbols = new List<FamilyData>();
 
             //把Symbol的name,symbol储存在symbols里，以便调用
             foreach (var FamilySymbolId in FamilySymbolIds)
             {
-                var FamilyData = new Family_Data();
+                var FamilyData = new FamilyData();
 
                 FamilyData.symbol = Family.Document.GetElement(FamilySymbolId) as FamilySymbol;
 
@@ -56,7 +56,7 @@ namespace FamilyBrowser
             //如果族类型数量大于1，就出现选择窗体
             else
             {
-                new Symbol_Choose(uidoc, symbols).ShowDialog();
+                new SymbolChoose(uidoc, symbols).ShowDialog();
             }
         }
 
