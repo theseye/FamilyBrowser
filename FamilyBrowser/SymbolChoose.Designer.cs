@@ -63,7 +63,7 @@
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.List;
             // 
-            // Symbol_Choose
+            // SymbolChoose
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -73,7 +73,9 @@
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_ok);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Symbol_Choose";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "SymbolChoose";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "选择族类型";
             this.Load += new System.EventHandler(this.symbol_choose_Load);
